@@ -86,6 +86,8 @@
 			<code>git clone /path/to/repository</code> <br />
             如果是远端服务器上的仓库，你的命令会是这个样子：<br />
             <code>git clone username@host:/path/to/repository</code>
+	    	检出带有子模块的仓库：<br />
+	    	<code>git clone --recursive /path/to/repository</code>
         </p>
     </div>
     <a name="trees"></a>
@@ -138,6 +140,8 @@
             <code>git branch -d feature_x</code><br />
 			除非你将分支推送到远端仓库，不然该分支就是 <i>不为他人所见的</i>：<br />
             <code>git push origin &lt;branch&gt;</code>
+	    	查看分支：<br />
+            <code>git branch</code><br />
         </p>
     </div>
     <a name="update"></a>
@@ -147,6 +151,8 @@
             要更新你的本地仓库至最新改动，执行：<br />
             <code>git pull</code><br />
             以在你的工作目录中 <i>获取（fetch）</i> 并 <i>合并（merge）</i> 远端的改动。<br />
+	    	获取远端更新<br />
+	    	<code>git fetch --all</code><br />
             要合并其他分支到你的当前分支（例如 master），执行：<br />
             <code>git merge &lt;branch&gt;</code><br />
             在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现<i>冲突（conflicts）</i>。
@@ -197,6 +203,10 @@
             假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：<br />
             <code>git fetch origin</code><br />
             <code>git reset --hard origin/master</code>
+	    
+	    	此外，你还可以checkout一个本地分支，然后将其硬重置为远程分支的最新commit。
+	    	<code>git checkout -b &lt;branchname&gt;</code><br />
+            <code>git reset --hard origin/&lt;branchname&gt;</code>
         </p>
     </div>
     <a name="hints"></a>
@@ -210,7 +220,17 @@
             显示历史记录时，每个提交的信息只显示一行：<br />
             <code>git config format.pretty oneline</code><br />
             交互式添加文件到暂存区：<br />
-            <code>git add -i</code>
+            <code>git add -i</code><br />
+	    	替换本地改动：<br />
+	    	<code>git checkout .</code><br />
+	    	添加子仓库：<br />
+	    	<code>git submodule add &lt;gitaddress&gt; &lt;.submodule-folder-optional&gt;</code><br />
+	    	更新子模块：<br />
+	    	<code>git submodule update --remote</code><br />
+	    	删除子模块：<br />
+	    	<code>rm -rf &lt;submodule&gt;</code><br />
+			<code>rm .gitmodules</code><br />
+			<code>vim .git/config</code><br />
         </p>
     </div>
     <a name="resources"></a>
