@@ -232,6 +232,25 @@
 			<code>rm .gitmodules</code><br />
 			<code>vim .git/config</code><br />
         </p>
+		<h2>如何贡献</h2>
+        <p>
+			fork 到自己的仓库，然后 clone 到本地，并设置用户信息。：<br />
+            <codegit clone /path/to/repository</code><br />
+            <code>cd repository-folder</code><br />
+            修改代码后提交，并推送到自己的仓库，注意修改提交消息为对应 Issue 号和描述。：<br />
+            <code># Update the content</code><br />
+            提交：<br />
+            <code>git commit -a -s</code><br />
+	    	# In commit msg dialog, add content like "Fix issue #235: describe ur change"：<br />
+	    	<code>git push</code><br />
+	    	提交 Pull Request，添加标签，并邀请维护者进行 Review。定期使用项目仓库内容更新自己仓库内容：<br />
+	    	<code>git remote add upstream https://github.com/***</code><br />
+	    	<br />
+	    	<code>git fetch upstream</code><br />
+	    	<br />
+	    	<code>git rebase upstream/master</code><br />
+			<code>git push -f origin master</code><br />
+        </p>
     </div>
     <a name="resources"></a>
     <div class="scrollblock block-resources">
