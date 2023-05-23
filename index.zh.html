@@ -238,9 +238,10 @@
             <codegit clone /path/to/repository</code><br />
             <code>cd repository-folder</code><br />
             修改代码后提交，并推送到自己的仓库，注意修改提交消息为对应 Issue 号和描述。：<br />
-            <code># Update the content</code><br />
+            <code># Update the content # git status # git rm -r --cached .</code><br />
             提交：<br />
             <code>git commit -a -s</code><br />
+			<code>#OR# git commit -a -m "msg"</code><br />
 	    	# In commit msg dialog, add content like "Fix issue #235: describe ur change"：<br />
 	    	<code>git push</code><br />
 	    	提交 Pull Request，添加标签，并邀请维护者进行 Review。定期使用项目仓库内容更新自己仓库内容：<br />
@@ -249,7 +250,9 @@
 	    	<code>git fetch upstream</code><br />
 	    	<br />
 	    	<code>git rebase upstream/master</code><br />
+			提交到远程仓库<br />
 			<code>git push -f origin master</code><br />
+			进入pull request页面，确认提交的更改 --- create pull request <br />
         </p>
     </div>
     <a name="resources"></a>
